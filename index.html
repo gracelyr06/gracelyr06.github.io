@@ -1,0 +1,171 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grace Lu, software engineer</title>
+  <meta name="description" content="Yongrong (Grace) Lu: GPU kernels, simulation and systems software. Computer Science at UIUC, on exchange at EPFL.">
+  <meta property="og:title" content="Grace Lu, software engineer">
+  <meta property="og:description" content="GPU kernels, simulation and systems software.">
+  <meta property="og:image" content="assets/grace.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="cv">
+
+    <!-- ============ HEADER ============ -->
+    <header class="profile">
+      <img class="avatar" src="assets/grace.jpg" alt="Grace on a mountain ridge" width="900" height="1154">
+      <div>
+        <h1>Yongrong (Grace) Lu</h1>
+        <p class="sub">Software engineer · GPU, simulation &amp; systems</p>
+        <p class="sub">Lausanne, CH &amp; Champaign, IL</p>
+      </div>
+    </header>
+
+    <p class="status"><span class="pulse" aria-hidden="true"></span>Open to a 2027 internship (3–6 months)</p>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="sec">
+      <h2>About</h2>
+      <div class="sec-body">
+        <p>
+          I believe in software–hardware co-design. I write GPU kernels, simulations and embedded
+          firmware, and I’m drawn to datacenter computer architecture, robotics and autonomous driving.
+        </p>
+        <p class="belief">I believe in technology that supports human well-being, empathy and healthy social systems.</p>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="sec">
+      <h2>Projects</h2>
+      <div class="sec-body">
+
+        <article class="row project">
+          <span class="when">2026</span>
+          <div>
+            <h3>Self-custody crypto wallet <span class="tag">1st place</span></h3>
+            <p class="at">Swissquote track, Blockchain Association Hackathon</p>
+            <p>2-of-3 threshold-ECDSA wallet: the key never exists in one place, and Face ID passkeys unlock your share.</p>
+            <figure class="slot-photo"><img src="assets/projects/wallet.jpg" alt="Swissquote wallet project"></figure>
+            <div class="slot-pdf" data-pdf="assets/projects/wallet.pdf" data-title="slides"></div>
+          </div>
+        </article>
+
+        <article class="row project">
+          <span class="when">2026</span>
+          <div>
+            <h3>Making GPT-2 fast in CUDA</h3>
+            <p class="at">FlashAttention-2 · KV cache · CuTe</p>
+            <p>Hand-written CUDA kernels for GPT-2 inference: <strong>19.3×</strong> faster attention, <strong>16×</strong> faster decoding.</p>
+            <figure class="slot-photo"><img src="assets/projects/cuda.jpg" alt="CUDA project"></figure>
+            <div class="slot-pdf" data-pdf="assets/projects/cuda.pdf" data-title="report"></div>
+          </div>
+        </article>
+
+        <article class="row project">
+          <span class="when">2026</span>
+          <div>
+            <h3>Mixture-of-Experts under skewed routing <span class="tag line">in progress</span></h3>
+            <p class="at">EPFL research</p>
+            <p>Benchmarking expert-parallel MoE inference on two H100s. Early result: skewed routing slows steps by 25–48%.</p>
+            <figure class="slot-photo"><img src="assets/projects/moe.jpg" alt="MoE research project"></figure>
+            <div class="slot-pdf" data-pdf="assets/projects/moe.pdf" data-title="draft"></div>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="sec">
+      <h2>Experience</h2>
+      <div class="sec-body">
+
+        <article class="row project">
+          <span class="when">2026 –</span>
+          <div>
+            <h3>Simulation Software Intern</h3>
+            <p class="at">Moffatt &amp; Nichol, Costa Mesa</p>
+            <p>C++/Lua simulation of a port under construction in Australia, with Power BI analytics that replace costly field tests.</p>
+            <figure class="slot-photo"><img src="assets/projects/simulation.jpg" alt="Port simulation project"></figure>
+            <div class="slot-pdf" data-pdf="assets/projects/simulation.pdf" data-title="write-up"></div>
+          </div>
+        </article>
+
+        <article class="row">
+          <span class="when">2026 –</span>
+          <div>
+            <h3>Full-Stack Engineer</h3>
+            <p class="at">NuCurrent, Champaign</p>
+            <p>Barcode inventory system in React, FastAPI and PostgreSQL.</p>
+          </div>
+        </article>
+
+        <article class="row">
+          <span class="when">2025 –</span>
+          <div>
+            <h3>Software &amp; Embedded Engineer</h3>
+            <p class="at">Illini Electric Motorsports</p>
+            <p>Safety-critical firmware for the EV battery-management system.</p>
+          </div>
+        </article>
+
+        <article class="row">
+          <span class="when">2025</span>
+          <div>
+            <h3>Software Automation Engineer</h3>
+            <p class="at">Cheung &amp; Chu CPA</p>
+            <p>LLM pipeline that cut 4 weeks of bookkeeping to 5 hours.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="sec">
+      <h2>Education</h2>
+      <div class="sec-body">
+        <article class="row">
+          <span class="when">2026 – 27</span>
+          <div><h3>EPFL, exchange</h3><p class="at">Multiprocessor Architecture, Distributed Algorithms, Legged Robotics</p></div>
+        </article>
+        <article class="row">
+          <span class="when">– 2028</span>
+          <div><h3>UIUC, B.S. Computer Science</h3><p class="at">Minor in Business · 4.0 GPA · Tau Beta Pi</p></div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="sec">
+      <h2>Skills</h2>
+      <div class="sec-body">
+        <div class="row"><span class="when">Code</span><p>C++, C, CUDA, Python, Lua, SQL, TypeScript</p></div>
+        <div class="row"><span class="when">Tools</span><p>CUTLASS/CuTe, Nsight, PyTorch, React, PostgreSQL</p></div>
+        <div class="row"><span class="when">Speaks</span><p>English, Mandarin, French (A2), Spanish (A2)</p></div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="sec" id="contact">
+      <h2>Contact</h2>
+      <div class="sec-body">
+        <div class="row"><span class="when">Email</span><a href="mailto:graceluyongrong@gmail.com">graceluyongrong@gmail.com</a></div>
+        <div class="row"><span class="when">LinkedIn</span><a href="https://www.linkedin.com/in/yongrong-lu">yongrong-lu ↗</a></div>
+        <div class="row"><span class="when">GitHub</span><a href="https://github.com/gracelyr06">gracelyr06 ↗</a></div>
+      </div>
+    </section>
+
+    <p class="fine">© <span id="year">2026</span> Yongrong (Grace) Lu</p>
+  </main>
+
+  <script src="slots.js"></script>
+</body>
+</html>

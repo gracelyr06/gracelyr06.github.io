@@ -1,0 +1,127 @@
+/* Palette: misty forest */
+:root {
+  --paper: #eef0ea;
+  --surface: #f6f7f3;
+  --mist: #afb5ae;
+  --sage: #858971;
+  --moss: #454b37;
+  --forest: #262c15;
+  --ink: #2f322b;
+  --muted: #6b7064;
+  --line: #d5d9cf;
+
+  --serif: "Fraunces", Georgia, serif;
+  --sans: "Inter", -apple-system, "Segoe UI", sans-serif;
+  color-scheme: light;
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: 400 15px/1.6 var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+img { max-width: 100%; display: block; }
+a { color: var(--forest); text-decoration: underline; text-decoration-color: var(--mist); text-underline-offset: 3px; }
+a:hover { text-decoration-color: var(--forest); }
+a:focus-visible { outline: 2px solid var(--moss); outline-offset: 3px; border-radius: 2px; }
+::selection { background: var(--mist); color: var(--forest); }
+h1, h2, h3, p { margin: 0; }
+
+.cv {
+  max-width: 680px;
+  margin: 0 auto;
+  padding: clamp(48px, 10vw, 112px) 20px 64px;
+}
+
+/* ---------- header ---------- */
+.profile { display: flex; align-items: center; gap: 20px; }
+.avatar {
+  width: 92px; height: 92px; flex: none;
+  border-radius: 50%; object-fit: cover; object-position: 50% 22%;
+}
+h1 {
+  font-family: var(--serif); font-weight: 400;
+  font-size: 1.75rem; line-height: 1.15; color: var(--forest);
+  letter-spacing: -.01em; margin-bottom: 4px;
+}
+.sub { color: var(--muted); }
+
+.status {
+  display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 24px; padding: 6px 14px;
+  background: var(--surface); border-radius: 999px;
+  font-size: .87rem; color: var(--moss);
+}
+.pulse {
+  width: 7px; height: 7px; border-radius: 50%; background: var(--sage); flex: none;
+  box-shadow: 0 0 0 0 rgba(69,75,55,.4); animation: pulse 2.4s infinite;
+}
+@keyframes pulse { 70% { box-shadow: 0 0 0 7px rgba(69,75,55,0); } 100% { box-shadow: 0 0 0 0 rgba(69,75,55,0); } }
+
+/* ---------- sections ---------- */
+.sec { margin-top: 56px; }
+h2 {
+  font-size: .8rem; font-weight: 500; letter-spacing: .02em;
+  color: var(--muted); margin-bottom: 18px;
+}
+.sec-body > p + p { margin-top: 12px; }
+.belief {
+  font-family: var(--serif); font-style: italic;
+  font-size: 1.12rem; line-height: 1.45; color: var(--moss);
+  padding-left: 14px; border-left: 2px solid var(--mist);
+}
+
+.row {
+  display: grid; grid-template-columns: 112px minmax(0, 1fr);
+  gap: 16px; align-items: baseline;
+}
+.row + .row { margin-top: 22px; }
+.when { color: var(--muted); font-size: .87rem; font-variant-numeric: tabular-nums; }
+h3 { font-size: 15px; font-weight: 500; color: var(--forest); }
+.at { color: var(--muted); }
+.row p:not(.at) { margin-top: 4px; }
+.row > p { margin-top: 0 !important; }
+strong { font-weight: 500; color: var(--forest); }
+
+.tag {
+  display: inline-block; margin-left: 6px; padding: 1px 8px;
+  font-size: .75rem; font-weight: 500; vertical-align: 1px;
+  color: var(--paper); background: var(--moss); border-radius: 999px;
+}
+.tag.line { color: var(--moss); background: transparent; box-shadow: inset 0 0 0 1px var(--sage); }
+
+/* ---------- photo + pdf slots ---------- */
+.slot-photo { margin: 12px 0 0; }
+.slot-photo img { width: 100%; height: auto; aspect-ratio: 16 / 10; object-fit: cover; border-radius: 10px; }
+.slot-pdf { margin-top: 8px; font-size: .87rem; display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; }
+.slot-pdf:empty { display: none; }
+.slot-pdf details { order: 2; flex-basis: 100%; }
+.slot-pdf summary { cursor: pointer; color: var(--moss); width: max-content; }
+.slot-pdf object {
+  display: block; width: 100%; aspect-ratio: 4 / 3; margin-top: 8px;
+  border: 0; border-radius: 10px; background: #fff;
+}
+.slot-pdf details[open] + .open { display: none; }
+.empty {
+  display: flex; gap: 8px; align-items: center; flex-wrap: wrap;
+  padding: 10px 12px; margin-top: 10px;
+  border: 1px dashed var(--mist); border-radius: 10px;
+  font-size: .82rem; color: var(--muted);
+}
+.empty code { background: var(--surface); padding: 1px 6px; border-radius: 4px; }
+
+.fine { margin-top: 72px; font-size: .8rem; color: var(--mist); }
+
+/* ---------- phones ---------- */
+@media (max-width: 540px) {
+  .avatar { width: 72px; height: 72px; }
+  h1 { font-size: 1.45rem; }
+  .row { grid-template-columns: 1fr; gap: 2px; }
+  .sec { margin-top: 44px; }
+}
+
+@media (prefers-reduced-motion: reduce) { .pulse { animation: none; } }
