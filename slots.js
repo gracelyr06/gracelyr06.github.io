@@ -4,58 +4,40 @@
   To fill a slot, upload a file to assets/projects/ with the matching name:
     wallet.jpg / wallet.pdf
     cuda.jpg / cuda.pdf
-    simulation.jpg / simulation.pdf
     moe.jpg / moe.pdf
+    simulation.jpg / simulation.pdf
 
   Empty slots are hidden from visitors. Add ?edit to the address
   (e.g. https://gracelyr06.github.io/?edit) to see where each file goes.
 */
 (function () {
   var edit = /[?&]edit\b/.test(location.search);
-  if (edit) document.documentElement.classList.add('edit');
 
   function placeholder(el, kind, file) {
+    if (!edit) { el.remove(); return; }
     el.classList.add('empty');
-    var p = document.createElement('div');
-    p.className = 'ph';
-    p.innerHTML = '<span class="hand">' + kind + ' goes here</span><code>' + file + '</code>';
-    el.appendChild(p);
+    el.innerHTML = '<span>' + kind + ' goes here</span><code>' + file + '</code>';
   }
 
-  function settle(project) {
-    var media = project.querySelector('.media');
-    var filled = media.querySelectorAll('.filled').length;
-    if (filled) project.classList.add('has-media');
-    else if (!edit) project.classList.add('no-media');
-  }
-
-  document.querySelectorAll('.project').forEach(function (project) {
-    var pending = 2;
-    function done() { if (--pending === 0) settle(project); }
-
-    // photo
-    var fig = project.querySelector('.slot-photo');
+  document.querySelectorAll('.slot-photo').forEach(function (fig) {
     var img = fig.querySelector('img');
     var file = img.getAttribute('src');
-    function photoOk() { fig.classList.add('filled'); done(); }
-    function photoMissing() { img.remove(); placeholder(fig, 'photo', file); done(); }
-    if (img.complete) { img.naturalWidth ? photoOk() : photoMissing(); }
-    else { img.addEventListener('load', photoOk); img.addEventListener('error', photoMissing); }
+    function missing() { placeholder(fig, 'Photo', file); }
+    if (img.complete) { if (!img.naturalWidth) missing(); }
+    else img.addEventListener('error', missing);
+  });
 
-    // pdf
-    var box = project.querySelector('.slot-pdf');
+  document.querySelectorAll('.slot-pdf').forEach(function (box) {
     var pdf = box.getAttribute('data-pdf');
     var title = box.getAttribute('data-title') || 'PDF';
     fetch(pdf, { method: 'HEAD' }).then(function (r) {
       if (!r.ok) throw 0;
-      box.classList.add('filled');
       box.innerHTML =
-        '<object data="' + pdf + '#view=FitH&toolbar=0" type="application/pdf" aria-label="' + title + '">' +
-        '<a href="' + pdf + '">Open ' + title + '</a></object>' +
+        '<details><summary>Preview ' + title + '</summary>' +
+        '<object data="' + pdf + '#view=FitH" type="application/pdf" aria-label="' + title + '">' +
+        '<a href="' + pdf + '">Open ' + title + '</a></object></details>' +
         '<a class="open" href="' + pdf + '" target="_blank" rel="noopener">Open ' + title + ' ↗</a>';
-    }).catch(function () {
-      placeholder(box, 'PDF', pdf);
-    }).then(done);
+    }).catch(function () { placeholder(box, 'PDF', pdf); });
   });
 
   var y = document.getElementById('year');

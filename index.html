@@ -11,222 +11,160 @@
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,50..100;1,9..144,300..600,50..100&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,400&family=Inter:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <main class="cv">
 
-
-  <header class="top">
-    <a href="#" class="mark">Grace&nbsp;Lu<span class="dot">.</span></a>
-    <nav>
-      <a href="#work">Work</a>
-      <a href="#experience">Experience</a>
-      <a href="#about">About</a>
-      <a href="#contact">Say hello</a>
-    </nav>
-  </header>
-
-  <main>
-    <!-- ============ INTRO ============ -->
-    <section class="intro">
-      <div class="intro-text">
-        <p class="kicker">Software engineer · Lausanne &amp; Champaign</p>
-        <h1>
-          Yongrong <span class="soft">(Grace)</span><br>
-          Lu
-        </h1>
-        <p class="lede">
-          I believe in <em>software–hardware co-design</em>: GPU kernels that make
-          a transformer run nineteen times faster, simulations of ports that
-          are still being built, and firmware that keeps an electric race car’s battery safe.
-        </p>
-        <p class="status"><span class="pulse" aria-hidden="true"></span>
-          On exchange at EPFL until Feb 2027 and looking for a <strong>2027 internship</strong> (3–6 months).
-        </p>
+    <!-- ============ HEADER ============ -->
+    <header class="profile">
+      <img class="avatar" src="assets/grace.jpg" alt="Grace on a mountain ridge" width="900" height="1154">
+      <div>
+        <h1>Yongrong (Grace) Lu</h1>
+        <p class="sub">Software engineer · GPU, simulation &amp; systems</p>
+        <p class="sub">Lausanne, CH &amp; Champaign, IL</p>
       </div>
+    </header>
 
-      <figure class="portrait">
-        <img src="assets/grace.jpg" alt="Grace smiling on a mountain ridge with alpine peaks behind her" width="900" height="1154">
-      </figure>
+    <p class="status"><span class="pulse" aria-hidden="true"></span>Open to a 2027 internship (3–6 months)</p>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="sec">
+      <h2>About</h2>
+      <div class="sec-body">
+        <p>
+          I believe in software–hardware co-design. I write GPU kernels, simulations and embedded
+          firmware, and I’m drawn to datacenter computer architecture, robotics and autonomous driving.
+        </p>
+        <p class="belief">I believe in technology that supports human well-being, empathy and healthy social systems.</p>
+      </div>
     </section>
 
-    <!-- ============ WORK ============ -->
-    <section id="work" class="work">
-      <div class="section-head">
-        <h2>Selected work</h2>
-        <p class="hand aside">four things I’m proud of</p>
+    <!-- ============ PROJECTS ============ -->
+    <section class="sec">
+      <h2>Projects</h2>
+      <div class="sec-body">
+
+        <article class="row project">
+          <span class="when">2026</span>
+          <div>
+            <h3>Self-custody crypto wallet <span class="tag">1st place</span></h3>
+            <p class="at">Swissquote track, Blockchain Association Hackathon</p>
+            <p>2-of-3 threshold-ECDSA wallet: the key never exists in one place, and Face ID passkeys unlock your share.</p>
+            <figure class="slot-photo"><img src="assets/projects/wallet.jpg" alt="Swissquote wallet project"></figure>
+            <div class="slot-pdf" data-pdf="assets/projects/wallet.pdf" data-title="slides"></div>
+          </div>
+        </article>
+
+        <article class="row project">
+          <span class="when">2026</span>
+          <div>
+            <h3>Making GPT-2 fast in CUDA</h3>
+            <p class="at">FlashAttention-2 · KV cache · CuTe</p>
+            <p>Hand-written CUDA kernels for GPT-2 inference: <strong>19.3×</strong> faster attention, <strong>16×</strong> faster decoding.</p>
+            <figure class="slot-photo"><img src="assets/projects/cuda.jpg" alt="CUDA project"></figure>
+            <div class="slot-pdf" data-pdf="assets/projects/cuda.pdf" data-title="report"></div>
+          </div>
+        </article>
+
+        <article class="row project">
+          <span class="when">2026</span>
+          <div>
+            <h3>Mixture-of-Experts under skewed routing <span class="tag line">in progress</span></h3>
+            <p class="at">EPFL research</p>
+            <p>Benchmarking expert-parallel MoE inference on two H100s. Early result: skewed routing slows steps by 25–48%.</p>
+            <figure class="slot-photo"><img src="assets/projects/moe.jpg" alt="MoE research project"></figure>
+            <div class="slot-pdf" data-pdf="assets/projects/moe.pdf" data-title="draft"></div>
+          </div>
+        </article>
+
       </div>
-
-      <!-- 01 -->
-      <article class="project" data-slot="wallet">
-        <div class="num">01</div>
-        <div class="body">
-          <p class="meta">Hackathon · Oct 2026 <span class="stamp">1st place</span></p>
-          <h3>A crypto wallet where the key never exists in one place</h3>
-          <p class="where">Swissquote track, Blockchain Association Hackathon</p>
-          <p>
-            Built with a team of three. The private key is split with 2-of-3 threshold-ECDSA (DKLs23),
-            so Swissquote co-signs and screens payments but can never move funds on its own.
-            Face ID passkeys (WebAuthn PRF) unlock the client’s share.
-          </p>
-          <ul class="points">
-            <li>Gasless USDC/EURC transfers (EIP-3009)</li>
-            <li>Time-locked recovery with key refresh</li>
-            <li>dApp policy with dry runs on Ethereum Sepolia, 15 end-to-end API tests</li>
-          </ul>
-          <p class="stack">TypeScript · React · Node.js · MPC</p>
-        </div>
-        <div class="media">
-          <figure class="slot-photo"><img src="assets/projects/wallet.jpg" alt="Swissquote wallet project"></figure>
-          <div class="slot-pdf" data-pdf="assets/projects/wallet.pdf" data-title="Wallet slides"></div>
-        </div>
-      </article>
-
-      <!-- 02 -->
-      <article class="project flip" data-slot="cuda">
-        <div class="num">02</div>
-        <div class="body">
-          <p class="meta">GPU kernels · Feb – May 2026</p>
-          <h3>Making GPT-2 fast, one CUDA kernel at a time</h3>
-          <p>
-            A tiled FlashAttention-2 kernel written in CUDA C++ from the paper, for GPT-2 124M inference.
-            It removes the O(N²) round-trips to GPU memory while keeping the output logits correct.
-          </p>
-          <dl class="figures">
-            <div><dt>19.3×</dt><dd>faster attention</dd></div>
-            <div><dt>16×</dt><dd>faster decoding with a KV cache</dd></div>
-            <div><dt>24.5% → 1.7%</dt><dd>attention’s share of GPU time</dd></div>
-          </dl>
-          <p class="small">
-            Also removed shared-memory bank conflicts with XOR swizzling (2.6× per GEMM),
-            and used CuTe-tiled GEMMs with SM80 tensor-core instructions for 1.41× end-to-end throughput.
-          </p>
-          <p class="stack">CUDA C++ · CUTLASS / CuTe · Nsight Compute</p>
-        </div>
-        <div class="media">
-          <figure class="slot-photo"><img src="assets/projects/cuda.jpg" alt="CUDA project"></figure>
-          <div class="slot-pdf" data-pdf="assets/projects/cuda.pdf" data-title="CUDA report"></div>
-        </div>
-      </article>
-
-      <!-- 03 -->
-      <article class="project" data-slot="simulation">
-        <div class="num">03</div>
-        <div class="body">
-          <p class="meta">Internship · Moffatt &amp; Nichol · from May 2026</p>
-          <h3>Simulating a port before it’s finished being built</h3>
-          <p class="where">Simulation Software Engineering Intern, Costa Mesa, CA</p>
-          <p>
-            A reusable C++/Lua framework inside the FlexTerm simulation software, for a port under
-            construction in Australia. A dispatcher drives interacting finite-state machines that
-            schedule pilots, tugs and berths as vessels move through weather, tunnel and resource limits.
-          </p>
-          <p>
-            Profiling tools feed Power BI dashboards on berth occupancy, wait times and tug use, so
-            engineers can test staffing in simulation instead of in the field. That saves an estimated
-            hundreds of thousands of dollars in field tests.
-          </p>
-          <p class="stack">C++ · Lua · FlexTerm · Power BI</p>
-        </div>
-        <div class="media">
-          <figure class="slot-photo"><img src="assets/projects/simulation.jpg" alt="Port simulation project"></figure>
-          <div class="slot-pdf" data-pdf="assets/projects/simulation.pdf" data-title="Simulation write-up"></div>
-        </div>
-      </article>
-
-      <!-- 04 -->
-      <article class="project flip wip" data-slot="moe">
-        <div class="num">04</div>
-        <div class="body">
-          <p class="meta">Research · EPFL · Fall 2026 <span class="stamp olive">in progress</span></p>
-          <h3>What happens to Mixture-of-Experts inference when routing gets lopsided</h3>
-          <p>
-            A benchmark for expert-parallel MoE inference on two H100 GPUs (60 experts, top-4 routing),
-            timing how long each GPU spends dispatching, computing and combining at every step.
-          </p>
-          <p class="note hand">early numbers: skewed routing made steps 25–48% slower. Full write-up coming soon.</p>
-          <p class="stack">PyTorch · CUDA · Nsight Systems</p>
-        </div>
-        <div class="media">
-          <figure class="slot-photo"><img src="assets/projects/moe.jpg" alt="MoE research project"></figure>
-          <div class="slot-pdf" data-pdf="assets/projects/moe.pdf" data-title="MoE draft"></div>
-        </div>
-      </article>
-
-      <p class="also">
-        Also: a <strong>Unix systems suite</strong> in C, with a non-blocking epoll file server and a Minix-style filesystem (Feb – May 2026).
-      </p>
     </section>
 
     <!-- ============ EXPERIENCE ============ -->
-    <section id="experience" class="experience">
-      <div class="section-head">
-        <h2>Experience</h2>
+    <section class="sec">
+      <h2>Experience</h2>
+      <div class="sec-body">
+
+        <article class="row project">
+          <span class="when">2026 –</span>
+          <div>
+            <h3>Simulation Software Intern</h3>
+            <p class="at">Moffatt &amp; Nichol, Costa Mesa</p>
+            <p>C++/Lua simulation of a port under construction in Australia, with Power BI analytics that replace costly field tests.</p>
+            <figure class="slot-photo"><img src="assets/projects/simulation.jpg" alt="Port simulation project"></figure>
+            <div class="slot-pdf" data-pdf="assets/projects/simulation.pdf" data-title="write-up"></div>
+          </div>
+        </article>
+
+        <article class="row">
+          <span class="when">2026 –</span>
+          <div>
+            <h3>Full-Stack Engineer</h3>
+            <p class="at">NuCurrent, Champaign</p>
+            <p>Barcode inventory system in React, FastAPI and PostgreSQL.</p>
+          </div>
+        </article>
+
+        <article class="row">
+          <span class="when">2025 –</span>
+          <div>
+            <h3>Software &amp; Embedded Engineer</h3>
+            <p class="at">Illini Electric Motorsports</p>
+            <p>Safety-critical firmware for the EV battery-management system.</p>
+          </div>
+        </article>
+
+        <article class="row">
+          <span class="when">2025</span>
+          <div>
+            <h3>Software Automation Engineer</h3>
+            <p class="at">Cheung &amp; Chu CPA</p>
+            <p>LLM pipeline that cut 4 weeks of bookkeeping to 5 hours.</p>
+          </div>
+        </article>
+
       </div>
-      <ol class="jobs">
-        <li>
-          <span class="when">May 2026 –</span>
-          <div><h3>Moffatt &amp; Nichol</h3><p class="role">Simulation Software Engineering Intern</p>
-          <p>Discrete-event simulation framework for maritime port operations (see 03 above).</p></div>
-        </li>
-        <li>
-          <span class="when">Jan 2026 –</span>
-          <div><h3>NuCurrent</h3><p class="role">Full-Stack Software Engineer</p>
-          <p>A barcode-based inventory system in React, FastAPI and PostgreSQL. It cut the time to find a part by 5–15 minutes, and the team has needed zero support since handoff.</p></div>
-        </li>
-        <li>
-          <span class="when">Jan 2025 –</span>
-          <div><h3>Illini Electric Motorsports</h3><p class="role">Software &amp; Embedded Engineer</p>
-          <p>Safety-critical C firmware for the EV battery-management module, plus Grafana dashboards that save 2–3 hours of debugging each week.</p></div>
-        </li>
-        <li>
-          <span class="when">Summer 2025</span>
-          <div><h3>Cheung &amp; Chu CPA</h3><p class="role">Software Automation Engineer</p>
-          <p>An LLM pipeline that turned three years of bank statements and handwritten receipts into clean records, cutting the work from 4 weeks to 5 hours.</p></div>
-        </li>
-      </ol>
     </section>
 
-    <!-- ============ ABOUT ============ -->
-    <section id="about" class="about">
-      <div class="about-main">
-        <h2>About</h2>
-        <p>
-          I study Computer Science (minor in Business) at the <strong>University of Illinois Urbana-Champaign</strong>,
-          with a 4.0 GPA, on the Dean’s List and in Tau Beta Pi. This year I’m on exchange at
-          <strong>EPFL</strong> in Lausanne, taking Multiprocessor Architecture, Distributed Algorithms and Legged Robotics.
-        </p>
-        <p>
-          Lately I’m drawn to <strong>computer architecture for the datacenter</strong>,
-          <strong>robotics</strong> and <strong>autonomous driving</strong>, the places where
-          software and hardware have to be designed together.
-        </p>
-        <blockquote class="belief">
-          I believe in technology that supports human well-being, empathy and healthy social systems.
-        </blockquote>
+    <!-- ============ EDUCATION ============ -->
+    <section class="sec">
+      <h2>Education</h2>
+      <div class="sec-body">
+        <article class="row">
+          <span class="when">2026 – 27</span>
+          <div><h3>EPFL, exchange</h3><p class="at">Multiprocessor Architecture, Distributed Algorithms, Legged Robotics</p></div>
+        </article>
+        <article class="row">
+          <span class="when">– 2028</span>
+          <div><h3>UIUC, B.S. Computer Science</h3><p class="at">Minor in Business · 4.0 GPA · Tau Beta Pi</p></div>
+        </article>
       </div>
-      <aside class="card">
-        <p class="hand">bits &amp; pieces</p>
-        <dl>
-          <dt>Code</dt><dd>C++, C, CUDA, Python, Lua, SQL, TypeScript</dd>
-          <dt>Tools</dt><dd>CUTLASS/CuTe, Nsight, PyTorch, React, FastAPI, PostgreSQL, Docker</dd>
-          <dt>Speaks</dt><dd>English, Mandarin, learning French &amp; Spanish</dd>
-        </dl>
-      </aside>
     </section>
-  </main>
 
-  <!-- ============ CONTACT ============ -->
-  <footer id="contact" class="contact">
-    <p class="hand big">let’s talk</p>
-    <a class="email" href="mailto:graceluyongrong@gmail.com">graceluyongrong@gmail.com</a>
-    <ul class="links">
-      <li><a href="https://www.linkedin.com/in/yongrong-lu">LinkedIn ↗</a></li>
-      <li><a href="https://github.com/gracelyr06">GitHub ↗</a></li>
-    </ul>
+    <!-- ============ SKILLS ============ -->
+    <section class="sec">
+      <h2>Skills</h2>
+      <div class="sec-body">
+        <div class="row"><span class="when">Code</span><p>C++, C, CUDA, Python, Lua, SQL, TypeScript</p></div>
+        <div class="row"><span class="when">Tools</span><p>CUTLASS/CuTe, Nsight, PyTorch, React, PostgreSQL</p></div>
+        <div class="row"><span class="when">Speaks</span><p>English, Mandarin, French (A2), Spanish (A2)</p></div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="sec" id="contact">
+      <h2>Contact</h2>
+      <div class="sec-body">
+        <div class="row"><span class="when">Email</span><a href="mailto:graceluyongrong@gmail.com">graceluyongrong@gmail.com</a></div>
+        <div class="row"><span class="when">LinkedIn</span><a href="https://www.linkedin.com/in/yongrong-lu">yongrong-lu ↗</a></div>
+        <div class="row"><span class="when">GitHub</span><a href="https://github.com/gracelyr06">gracelyr06 ↗</a></div>
+      </div>
+    </section>
+
     <p class="fine">© <span id="year">2026</span> Yongrong (Grace) Lu</p>
-  </footer>
+  </main>
 
   <script src="slots.js"></script>
 </body>
