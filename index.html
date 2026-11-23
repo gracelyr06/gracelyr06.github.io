@@ -3,97 +3,238 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>gg — Portfolio</title>
-  <meta name="description" content="Projects, research and experience.">
+  <title>Grace Lu, software engineer</title>
+  <meta name="description" content="Yongrong (Grace) Lu: GPU kernels, simulation and systems software. Computer Science at UIUC, on exchange at EPFL.">
+  <meta property="og:title" content="Grace Lu, software engineer">
+  <meta property="og:description" content="GPU kernels, simulation and systems software.">
+  <meta property="og:image" content="assets/grace.jpg">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..600,50..100;1,9..144,300..600,50..100&family=Work+Sans:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="site-header">
-    <nav class="wrap nav">
-      <a href="#top" class="logo">gg</a>
-      <ul>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#research">Research</a></li>
-        <li><a href="#experience">Experience</a></li>
-        <li><a href="#contact">Contact</a></li>
-      </ul>
+
+  <!-- a hand-drawn grid band, a nod to the notebook -->
+  <svg class="gridband" viewBox="0 0 1440 120" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 8 C 300 4, 700 13, 1440 6 M0 70 C 380 76, 900 64, 1440 72"/>
+    <path d="M30 0 C 33 40, 27 80, 32 120 M118 0 C 114 50, 121 90, 117 120 M204 0 C 208 30, 201 80, 206 120 M287 0 C 284 40, 290 70, 286 120 M372 0 C 376 45, 369 85, 374 120 M455 0 C 452 30, 458 75, 454 120 M541 0 C 545 50, 538 90, 543 120 M626 0 C 622 40, 629 80, 624 120 M708 0 C 712 35, 705 75, 710 120 M795 0 C 791 50, 798 85, 793 120 M880 0 C 884 40, 877 80, 882 120 M962 0 C 959 30, 966 70, 961 120 M1049 0 C 1053 45, 1046 85, 1051 120 M1133 0 C 1129 40, 1136 80, 1131 120 M1218 0 C 1222 35, 1215 75, 1220 120 M1302 0 C 1298 50, 1305 85, 1300 120 M1388 0 C 1392 40, 1385 80, 1390 120"/>
+  </svg>
+
+  <header class="top">
+    <a href="#" class="mark">Grace&nbsp;Lu<span class="dot">.</span></a>
+    <nav>
+      <a href="#work">Work</a>
+      <a href="#experience">Experience</a>
+      <a href="#about">About</a>
+      <a href="#contact">Say hello</a>
     </nav>
   </header>
 
-  <main id="top">
-    <section class="wrap hero">
-      <p class="eyebrow">Hi, I'm</p>
-      <h1>[Your Name]</h1>
-      <p class="lead">[One-line intro, e.g. "Engineer working on GPU computing, simulation and machine learning systems."]</p>
-      <div class="hero-links">
-        <a class="btn" href="#projects">See my work</a>
-        <a class="btn ghost" href="[CV link]">CV</a>
+  <main>
+    <!-- ============ INTRO ============ -->
+    <section class="intro">
+      <div class="intro-text">
+        <p class="kicker">Software engineer · Lausanne &amp; Champaign</p>
+        <h1>
+          Yongrong <span class="soft">(Grace)</span><br>
+          Lu<svg class="squiggle" viewBox="0 0 220 24" aria-hidden="true"><path d="M3 15 C 30 4, 52 22, 80 12 S 130 4, 158 14 S 200 18, 217 8"/></svg>
+        </h1>
+        <p class="lede">
+          I believe in <em>software–hardware co-design</em>: GPU kernels that make
+          a transformer run nineteen times faster, simulations of ports that
+          are still being built, and firmware that keeps an electric race car’s battery safe.
+        </p>
+        <p class="status"><span class="pulse" aria-hidden="true"></span>
+          On exchange at EPFL until Feb 2027 and looking for a <strong>2027 internship</strong> (3–6 months).
+        </p>
       </div>
+
+      <figure class="portrait">
+        <span class="tape" aria-hidden="true"></span>
+        <img src="assets/grace.jpg" alt="Grace smiling on a mountain ridge with alpine peaks behind her" width="900" height="1154">
+        <figcaption class="hand">somewhere above the tree line ↗</figcaption>
+      </figure>
     </section>
 
-    <section id="projects" class="wrap section">
-      <h2>Projects</h2>
-      <div class="grid">
-        <article class="card">
-          <div class="card-tag">Hackathon · Swissquote</div>
-          <h3>Swissquote Wallet</h3>
-          <p>[What the wallet does, what problem it solves, and what you built during the hackathon. Mention placement/award if any.]</p>
-          <ul class="tags"><li>[Stack]</li><li>[Stack]</li><li>[Stack]</li></ul>
-          <div class="card-links">
-            <a href="[GitHub link]">Code</a>
-            <a href="[Demo / Devpost link]">Demo</a>
-          </div>
-        </article>
-
-        <article class="card">
-          <div class="card-tag">GPU · CUDA</div>
-          <h3>[CUDA Project Name]</h3>
-          <p>[What you accelerated, the approach (kernels, memory optimisation, etc.) and the headline result, e.g. "12× speedup over CPU baseline".]</p>
-          <ul class="tags"><li>CUDA</li><li>C++</li><li>[Stack]</li></ul>
-          <div class="card-links">
-            <a href="[GitHub link]">Code</a>
-            <a href="[Write-up link]">Write-up</a>
-          </div>
-        </article>
+    <!-- ============ WORK ============ -->
+    <section id="work" class="work">
+      <div class="section-head">
+        <h2>Selected work</h2>
+        <p class="hand aside">four things I’m proud of</p>
       </div>
-    </section>
 
-    <section id="research" class="wrap section">
-      <h2>Research</h2>
-      <article class="card wide wip">
-        <div class="card-tag">Mixture of Experts <span class="badge">🚧 Under construction</span></div>
-        <h3>[MoE Research Title]</h3>
-        <p>[Short description of the research question you're exploring with Mixture-of-Experts models. Results and paper coming soon.]</p>
-        <ul class="tags"><li>MoE</li><li>Deep Learning</li><li>[Stack]</li></ul>
+      <!-- 01 -->
+      <article class="project" data-slot="wallet">
+        <div class="num">01</div>
+        <div class="body">
+          <p class="meta">Hackathon · Oct 2026 <span class="stamp">1st place</span></p>
+          <h3>A crypto wallet where the key never exists in one place</h3>
+          <p class="where">Swissquote track, Blockchain Association Hackathon</p>
+          <p>
+            Built with a team of three. The private key is split with 2-of-3 threshold-ECDSA (DKLs23),
+            so Swissquote co-signs and screens payments but can never move funds on its own.
+            Face ID passkeys (WebAuthn PRF) unlock the client’s share.
+          </p>
+          <ul class="points">
+            <li>Gasless USDC/EURC transfers (EIP-3009)</li>
+            <li>Time-locked recovery with key refresh</li>
+            <li>dApp policy with dry runs on Ethereum Sepolia, 15 end-to-end API tests</li>
+          </ul>
+          <p class="stack">TypeScript · React · Node.js · MPC</p>
+        </div>
+        <div class="media">
+          <figure class="slot-photo"><img src="assets/projects/wallet.jpg" alt="Swissquote wallet project"></figure>
+          <div class="slot-pdf" data-pdf="assets/projects/wallet.pdf" data-title="Wallet slides"></div>
+        </div>
       </article>
+
+      <!-- 02 -->
+      <article class="project flip" data-slot="cuda">
+        <div class="num">02</div>
+        <div class="body">
+          <p class="meta">GPU kernels · Feb – May 2026</p>
+          <h3>Making GPT-2 fast, one CUDA kernel at a time</h3>
+          <p>
+            A tiled FlashAttention-2 kernel written in CUDA C++ from the paper, for GPT-2 124M inference.
+            It removes the O(N²) round-trips to GPU memory while keeping the output logits correct.
+          </p>
+          <dl class="figures">
+            <div><dt>19.3×</dt><dd>faster attention</dd></div>
+            <div><dt>16×</dt><dd>faster decoding with a KV cache</dd></div>
+            <div><dt>24.5% → 1.7%</dt><dd>attention’s share of GPU time</dd></div>
+          </dl>
+          <p class="small">
+            Also removed shared-memory bank conflicts with XOR swizzling (2.6× per GEMM),
+            and used CuTe-tiled GEMMs with SM80 tensor-core instructions for 1.41× end-to-end throughput.
+          </p>
+          <p class="stack">CUDA C++ · CUTLASS / CuTe · Nsight Compute</p>
+        </div>
+        <div class="media">
+          <figure class="slot-photo"><img src="assets/projects/cuda.jpg" alt="CUDA project"></figure>
+          <div class="slot-pdf" data-pdf="assets/projects/cuda.pdf" data-title="CUDA report"></div>
+        </div>
+      </article>
+
+      <!-- 03 -->
+      <article class="project" data-slot="simulation">
+        <div class="num">03</div>
+        <div class="body">
+          <p class="meta">Internship · Moffatt &amp; Nichol · from May 2026</p>
+          <h3>Simulating a port before it’s finished being built</h3>
+          <p class="where">Simulation Software Engineering Intern, Costa Mesa, CA</p>
+          <p>
+            A reusable C++/Lua framework inside the FlexTerm simulation software, for a port under
+            construction in Australia. A dispatcher drives interacting finite-state machines that
+            schedule pilots, tugs and berths as vessels move through weather, tunnel and resource limits.
+          </p>
+          <p>
+            Profiling tools feed Power BI dashboards on berth occupancy, wait times and tug use, so
+            engineers can test staffing in simulation instead of in the field. That saves an estimated
+            hundreds of thousands of dollars in field tests.
+          </p>
+          <p class="stack">C++ · Lua · FlexTerm · Power BI</p>
+        </div>
+        <div class="media">
+          <figure class="slot-photo"><img src="assets/projects/simulation.jpg" alt="Port simulation project"></figure>
+          <div class="slot-pdf" data-pdf="assets/projects/simulation.pdf" data-title="Simulation write-up"></div>
+        </div>
+      </article>
+
+      <!-- 04 -->
+      <article class="project flip wip" data-slot="moe">
+        <div class="num">04</div>
+        <div class="body">
+          <p class="meta">Research · EPFL · Fall 2026 <span class="stamp olive">in progress</span></p>
+          <h3>What happens to Mixture-of-Experts inference when routing gets lopsided</h3>
+          <p>
+            A benchmark for expert-parallel MoE inference on two H100 GPUs (60 experts, top-4 routing),
+            timing how long each GPU spends dispatching, computing and combining at every step.
+          </p>
+          <p class="note hand">early numbers: skewed routing made steps 25–48% slower. Full write-up coming soon.</p>
+          <p class="stack">PyTorch · CUDA · Nsight Systems</p>
+        </div>
+        <div class="media">
+          <figure class="slot-photo"><img src="assets/projects/moe.jpg" alt="MoE research project"></figure>
+          <div class="slot-pdf" data-pdf="assets/projects/moe.pdf" data-title="MoE draft"></div>
+        </div>
+      </article>
+
+      <p class="also">
+        Also: a <strong>Unix systems suite</strong> in C, with a non-blocking epoll file server and a Minix-style filesystem (Feb – May 2026).
+      </p>
     </section>
 
-    <section id="experience" class="wrap section">
-      <h2>Experience</h2>
-      <div class="timeline">
-        <article class="item">
-          <div class="when">[Start] – [End]</div>
-          <div>
-            <h3>[Role] · [Company]</h3>
-            <p>[Simulation work you did during the internship: what you simulated, tools used, and impact.]</p>
-            <ul class="tags"><li>Simulation</li><li>[Stack]</li></ul>
-          </div>
-        </article>
+    <!-- ============ EXPERIENCE ============ -->
+    <section id="experience" class="experience">
+      <div class="section-head">
+        <h2>Experience</h2>
       </div>
+      <ol class="jobs">
+        <li>
+          <span class="when">May 2026 –</span>
+          <div><h3>Moffatt &amp; Nichol</h3><p class="role">Simulation Software Engineering Intern</p>
+          <p>Discrete-event simulation framework for maritime port operations (see 03 above).</p></div>
+        </li>
+        <li>
+          <span class="when">Jan 2026 –</span>
+          <div><h3>NuCurrent</h3><p class="role">Full-Stack Software Engineer</p>
+          <p>A barcode-based inventory system in React, FastAPI and PostgreSQL. It cut the time to find a part by 5–15 minutes, and the team has needed zero support since handoff.</p></div>
+        </li>
+        <li>
+          <span class="when">Jan 2025 –</span>
+          <div><h3>Illini Electric Motorsports</h3><p class="role">Software &amp; Embedded Engineer</p>
+          <p>Safety-critical C firmware for the EV battery-management module, plus Grafana dashboards that save 2–3 hours of debugging each week.</p></div>
+        </li>
+        <li>
+          <span class="when">Summer 2025</span>
+          <div><h3>Cheung &amp; Chu CPA</h3><p class="role">Software Automation Engineer</p>
+          <p>An LLM pipeline that turned three years of bank statements and handwritten receipts into clean records, cutting the work from 4 weeks to 5 hours.</p></div>
+        </li>
+      </ol>
     </section>
 
-    <section id="contact" class="wrap section contact">
-      <h2>Contact</h2>
-      <p>Open to opportunities and collaborations.</p>
-      <div class="hero-links">
-        <a class="btn" href="mailto:[your email]">Email</a>
-        <a class="btn ghost" href="[GitHub profile]">GitHub</a>
-        <a class="btn ghost" href="[LinkedIn profile]">LinkedIn</a>
+    <!-- ============ ABOUT ============ -->
+    <section id="about" class="about">
+      <div class="about-main">
+        <h2>About</h2>
+        <p>
+          I study Computer Science (minor in Business) at the <strong>University of Illinois Urbana-Champaign</strong>,
+          with a 4.0 GPA, on the Dean’s List and in Tau Beta Pi. This year I’m on exchange at
+          <strong>EPFL</strong> in Lausanne, taking Multiprocessor Architecture, Distributed Algorithms and Legged Robotics.
+        </p>
+        <p>
+          Lately I’m drawn to <strong>computer architecture for the datacenter</strong>,
+          <strong>robotics</strong> and <strong>autonomous driving</strong>, the places where
+          software and hardware have to be designed together.
+        </p>
+        <blockquote class="belief">
+          I believe in technology that supports human well-being, empathy and healthy social systems.
+        </blockquote>
       </div>
+      <aside class="card">
+        <p class="hand">bits &amp; pieces</p>
+        <dl>
+          <dt>Code</dt><dd>C++, C, CUDA, Python, Lua, SQL, TypeScript</dd>
+          <dt>Tools</dt><dd>CUTLASS/CuTe, Nsight, PyTorch, React, FastAPI, PostgreSQL, Docker</dd>
+          <dt>Speaks</dt><dd>English, Mandarin, learning French &amp; Spanish</dd>
+        </dl>
+      </aside>
     </section>
   </main>
 
-  <footer class="wrap footer">© <span id="year"></span> [Your Name]</footer>
-  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+  <!-- ============ CONTACT ============ -->
+  <footer id="contact" class="contact">
+    <p class="hand big">let’s talk</p>
+    <a class="email" href="mailto:graceluyongrong@gmail.com">graceluyongrong@gmail.com</a>
+    <ul class="links">
+      <li><a href="https://www.linkedin.com/in/yongrong-lu">LinkedIn ↗</a></li>
+      <li><a href="https://github.com/gracelyr06">GitHub ↗</a></li>
+    </ul>
+    <p class="fine">© <span id="year">2026</span> Yongrong (Grace) Lu</p>
+  </footer>
+
+  <script src="slots.js"></script>
 </body>
 </html>
