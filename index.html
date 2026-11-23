@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>gg — Portfolio</title>
+  <meta name="description" content="Projects, research and experience.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="wrap nav">
+      <a href="#top" class="logo">gg</a>
+      <ul>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#research">Research</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main id="top">
+    <section class="wrap hero">
+      <p class="eyebrow">Hi, I'm</p>
+      <h1>[Your Name]</h1>
+      <p class="lead">[One-line intro, e.g. "Engineer working on GPU computing, simulation and machine learning systems."]</p>
+      <div class="hero-links">
+        <a class="btn" href="#projects">See my work</a>
+        <a class="btn ghost" href="[CV link]">CV</a>
+      </div>
+    </section>
+
+    <section id="projects" class="wrap section">
+      <h2>Projects</h2>
+      <div class="grid">
+        <article class="card">
+          <div class="card-tag">Hackathon · Swissquote</div>
+          <h3>Swissquote Wallet</h3>
+          <p>[What the wallet does, what problem it solves, and what you built during the hackathon. Mention placement/award if any.]</p>
+          <ul class="tags"><li>[Stack]</li><li>[Stack]</li><li>[Stack]</li></ul>
+          <div class="card-links">
+            <a href="[GitHub link]">Code</a>
+            <a href="[Demo / Devpost link]">Demo</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">GPU · CUDA</div>
+          <h3>[CUDA Project Name]</h3>
+          <p>[What you accelerated, the approach (kernels, memory optimisation, etc.) and the headline result, e.g. "12× speedup over CPU baseline".]</p>
+          <ul class="tags"><li>CUDA</li><li>C++</li><li>[Stack]</li></ul>
+          <div class="card-links">
+            <a href="[GitHub link]">Code</a>
+            <a href="[Write-up link]">Write-up</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="research" class="wrap section">
+      <h2>Research</h2>
+      <article class="card wide wip">
+        <div class="card-tag">Mixture of Experts <span class="badge">🚧 Under construction</span></div>
+        <h3>[MoE Research Title]</h3>
+        <p>[Short description of the research question you're exploring with Mixture-of-Experts models. Results and paper coming soon.]</p>
+        <ul class="tags"><li>MoE</li><li>Deep Learning</li><li>[Stack]</li></ul>
+      </article>
+    </section>
+
+    <section id="experience" class="wrap section">
+      <h2>Experience</h2>
+      <div class="timeline">
+        <article class="item">
+          <div class="when">[Start] – [End]</div>
+          <div>
+            <h3>[Role] · [Company]</h3>
+            <p>[Simulation work you did during the internship: what you simulated, tools used, and impact.]</p>
+            <ul class="tags"><li>Simulation</li><li>[Stack]</li></ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="contact" class="wrap section contact">
+      <h2>Contact</h2>
+      <p>Open to opportunities and collaborations.</p>
+      <div class="hero-links">
+        <a class="btn" href="mailto:[your email]">Email</a>
+        <a class="btn ghost" href="[GitHub profile]">GitHub</a>
+        <a class="btn ghost" href="[LinkedIn profile]">LinkedIn</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="wrap footer">© <span id="year"></span> [Your Name]</footer>
+  <script>document.getElementById('year').textContent = new Date().getFullYear();</script>
+</body>
+</html>
